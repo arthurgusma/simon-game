@@ -4,6 +4,7 @@ var userClickedPattern = [];
 var level = 1;
 var firstKey = true;
 
+
 $(document).on("keydown", function() {
   if (firstKey === true) {
     firstKey = false;
@@ -47,7 +48,14 @@ function checkAnswer(currentLevel) {
     }, 200);
     userClickedPattern = [];
     $("h1").text("Game Over, Press Any Key to Restart");
+    startOver();
   }
+}
+
+function startOver() {
+  level = 1;
+  gamePattern = [];
+  firstKey = true;
 }
 
 function animatePress(currentColour) {
